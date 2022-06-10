@@ -68,13 +68,12 @@ button:hover{
 
 .image-format p{
     font-size: 120px;
-    color: brown;
 }
 
 #movie-area{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 #page-heading{
@@ -112,7 +111,7 @@ body{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: grey;
+    color: rgb(216, 214, 214);
     background-color: rgba(41, 39, 39, 0.685);
     border-radius: 25px;
     outline: none;

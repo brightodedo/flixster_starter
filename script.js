@@ -156,7 +156,13 @@ async function clearResults(event){
 
 }
 function displayPopUp(movie, videoId){
-    
+    let genres = '';
+    for (let index = 0; index < movie['genres'].length - 1; index++) {
+        genres += movie['genres'][index]['name'];
+        genres += ', '
+    }
+    genres += movie['genres'][movie['genres'].length-1]['name'];
+    console.log(genres);
     popup.innerHTML = `
     <div class="centered">
     <button id="close-pop-up"> X </button>
@@ -166,7 +172,7 @@ function displayPopUp(movie, videoId){
         <h3><strong>Watch Trailer</strong></h3>
         <h3> <strong>Synopsis</strong>: ${movie['overview']}</h3>
         <h3> <strong>Runtime</strong>: ${movie['runtime']}mins</h3>
-        <h3> <strong>genre</strong>: ${movie['genres'].forEach(genre => genre)} </h3>
+        <h3> <strong>genre</strong>: ${genres} </h3>
         <h3> <strong>release date</strong>: ${movie['release_date']}</h3>
     `;
     document.getElementById('close-pop-up').addEventListener('click', removef);
