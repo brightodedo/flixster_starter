@@ -6,10 +6,11 @@ const searchTerm = document.querySelector('input');
 const pageHeading = document.getElementById('page-heading');
 const loadMore = document.getElementById('load-more');
 const removeResults = document.querySelector('#previous');
+const popup = document.getElementById('pop');
 
 let page = 1;
 let wordSearch = null;
-
+let newButton;
 /**
  * Function that returns an array  of objects containing the movies
  * @param {yurl} is the url to the api 
@@ -29,22 +30,22 @@ function displayContent(movieObj){
     loadMore.style.display = 'initial';
     if(movieObj['poster_path']){
     movieArea.innerHTML += `
-    <div class="image-format">
+    <div class="image-format" id="${movieObj['id']}">
     <img src="https://image.tmdb.org/t/p/w500${movieObj['poster_path']}" 
-    alt="Movie poster for ${movieObj['title']}">
+    alt="Movie poster for ${movieObj['title']}" >
             <span> ${movieObj['title']} </span>
             <h6> Score: ${movieObj['vote_average']} </h6>
         </div>`;
     }
     else{
         movieArea.innerHTML += `
-    <div class="image-format">
-    <img src="Default Image goes here" 
+    <div class="image-format" id="${movieObj['id']}">
+    <img src="notfound.png" 
     alt="Movie poster for ${movieObj['title']}">
             <span> ${movieObj['title']} </span>
             <h6> Score: ${movieObj['vote_average']} </h6>
         </div>`;
-    }
+}
 }
 
 /**
@@ -66,6 +67,7 @@ function addEventListeners(){
     form1.addEventListener('submit', handleSearch);
     loadMore.addEventListener('click', getMore);
     removeResults.addEventListener('click', clearResults);
+    movieArea.addEventListener('click', moreInfo);
 }
 
 async function handleSearch(event){
@@ -99,7 +101,6 @@ async function handleSearch(event){
     }
     removeResults.style.display = 'initial';
 }
-
 async function getMore(event){
     page += 1;
 
@@ -153,4 +154,56 @@ async function clearResults(event){
     });
     addEventListeners();
 
+}
+function displayPopUp(movie, videoId){
+    
+    popup.innerHTML = `
+    <div class="centered">
+    <button id="close-pop-up"> X </button>
+    </div>
+    <h1> ${movie['title']} </h1>
+        <iframe src="https://www.youtube.com/embed/${videoId}" frameborder="0"></iframe>
+        <h3><strong>Watch Trailer</strong></h3>
+        <h3> <strong>Synopsis</strong>: ${movie['overview']}</h3>
+        <h3> <strong>Runtime</strong>: ${movie['runtime']}mins</h3>
+        <h3> <strong>genre</strong>: ${movie['genres'].forEach(genre => genre)} </h3>
+        <h3> <strong>release date</strong>: ${movie['release_date']}</h3>
+    `;
+    document.getElementById('close-pop-up').addEventListener('click', removef);
+}
+function removef(event){
+    popup.innerHTML = '';
+}
+
+async function moreInfo(event){
+    //get the correct id
+    let objId = event.target.id;
+    if(objId == ''){
+        objId = event.target.parentNode.id;
+    }
+    else{
+    }
+    if(objId != 'movie-area'){
+        //search for the movie url
+        let url = `https://api.themoviedb.org/3/movie/${objId}?api_key=${API_KEY}`
+
+        //get results 
+        let apiData = await fetch(url);
+
+        /*
+        get the youtube videoID
+        */
+       url = `https://api.themoviedb.org/3/movie/${objId}/videos?api_key=${API_KEY}`;
+
+       let videoData = await fetch(url);
+       let videoData1 = await videoData.json();
+       let videoLink = null;
+       
+       if(videoData1['results'].length > 0){
+        videoLink = videoData1['results'][0]['key']
+       }
+       
+        //display as pop up
+        displayPopUp(await apiData.json(), videoLink);
+    }
 }

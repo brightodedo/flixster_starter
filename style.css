@@ -1,13 +1,47 @@
 .title-container{
     display: flex;
-    flex-flow: wrap
+    flex-flow: row nowrap;
+    flex-direction: row;
+    align-items: center;
+    border: 5px solid;
+    border-color: grey;
 }
 
 #title-heading{
-    color: brown;
+    text-align: center;
+    flex-grow: 1;
+    color: lavenderblush;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
+.title-items{
+    text-align: center;
+    flex-grow: 3;
+}
 
+.title-items input{
+    height: 23px;
+    width: 350px;
+    border-radius: 5px;
+    border: none;
+}
+
+.title-items input:focus{
+    outline: none ;
+    box-shadow: 0 0 25px #BF40BF;
+}
+
+button{
+    height: 23px;
+    border: none;
+    background-color: #893294;
+    border-radius: 6px;
+    color: lavenderblush;
+}
+button:hover{
+    transform: scale(1.2);
+}
 
 .image-format{
     background-color: black;
@@ -21,7 +55,7 @@
     outline: none;
     box-shadow: 0 0 18px lavenderblush;
     border-radius: 50px;
-    transform: scale(0.9);
+    transform: scale(0.84);
 }
 
 .image-format img{
@@ -55,13 +89,50 @@
     -moz-text-fill-color: transparent;
 }
 
-body{
-    background-color: black;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 #load-more{   
+    margin: 15px;
 }
 #previous{
     display: none;
+    margin: 0px 0px 15px 0px;
+}
+.centered{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+}
+
+#pop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: grey;
+    background-color: rgba(41, 39, 39, 0.685);
+    border-radius: 25px;
+    outline: none;
+    align-items: center;
+    box-shadow: 0 0 50px #BF40BF;
+    opacity: 100%;
+    position: fixed;
+    max-width: 1080px;
+    max-height: 600px;
+    top: 20px;
+    left: 180px;
+    right: 180px;
+}
+strong{
+    font-style: italic;
+    font-weight: 400;
+}
+iframe{
+    max-width: 800px;
+}
+#pop button{
+    margin-top: 25px;
 }
