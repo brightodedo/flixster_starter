@@ -1,11 +1,11 @@
 //  List of constants from index.html and others
 const API_KEY = 'b486caf6eea84e339dda87749d83b89f';
-const movieArea = document.querySelector('#movie-area');
+const movieArea = document.querySelector('#movies-grid');
 const form1 = document.querySelector('#toSubmit');
 const searchTerm = document.querySelector('input');
 const pageHeading = document.getElementById('page-heading');
-const loadMore = document.getElementById('load-more');
-const removeResults = document.querySelector('#previous');
+const loadMore = document.getElementById('load-more-movies-btn');
+const removeResults = document.querySelector('#close-search-btn');
 const popup = document.getElementById('pop');
 
 let page = 1;
@@ -32,18 +32,18 @@ function displayContent(movieObj){
     movieArea.innerHTML += `
     <div class="image-format" id="${movieObj['id']}">
     <img src="https://image.tmdb.org/t/p/w500${movieObj['poster_path']}" 
-    alt="Movie poster for ${movieObj['title']}" >
-            <span> ${movieObj['title']} </span>
-            <h6> Score: ${movieObj['vote_average']} </h6>
+    alt="Movie poster for ${movieObj['title']}" class="movie-poster">
+            <span class="movie-title"> ${movieObj['title']} </span>
+            <h6 class="movie-votes"> Score: ${movieObj['vote_average']} </h6>
         </div>`;
     }
     else{
         movieArea.innerHTML += `
     <div class="image-format" id="${movieObj['id']}">
     <img src="notfound.png" 
-    alt="Movie poster for ${movieObj['title']}">
-            <span> ${movieObj['title']} </span>
-            <h6> Score: ${movieObj['vote_average']} </h6>
+    alt="Movie poster for ${movieObj['title']}" class="movie-poster">
+            <span class="movie-title"> ${movieObj['title']} </span>
+            <h6 class="movie-votes"> Score: ${movieObj['vote_average']} </h6>
         </div>`;
 }
 }
@@ -189,7 +189,7 @@ async function moreInfo(event){
     }
     else{
     }
-    if(objId != 'movie-area'){
+    if(objId != 'movies-grid'){
         //search for the movie url
         let url = `https://api.themoviedb.org/3/movie/${objId}?api_key=${API_KEY}`
 

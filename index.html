@@ -15,7 +15,7 @@
         
         <!-- form for the submission button -->
         <form action="" class="title-items" id="toSubmit">
-            <input type="" value="" placeholder="example: Demon Slayer" required>
+            <input type="" value="" placeholder="example: Demon Slayer" id="search-input" required>
             <button type="submit">search</span></i></button>
         </form>
     </nav>
@@ -27,26 +27,25 @@
     </div>
 
     <!-- Area to show the list of current movies or to display the searched movie -->
-    <div id="movie-area">
+    <div id="movies-grid">
 
 <!-- 
         <div class="image-format">
-            <img src="" alt="">
-            <span> description </span>
-            <p> stars </p>
+            <img src="" alt="" class="movie-poster">
+            <span class="movie-title"> Name </span>
+            <h6 class="movie-votes"> stars </h6>
         </div> -->
-
 
     </div>
 
     <!-- Load more button that only displays with current movies -->
     <div class="centered">
-        <button id="load-more"> Load More </button>
+        <button id="load-more-movies-btn"> Load More </button>
     </div>
 
     <!-- Previous page button that allows the user to return to the previous page -->
     <div class="centered">
-        <button id="previous"> Clear Results </button>
+        <button id="close-search-btn"> Clear Results </button>
     </div>
 
     <div id="pop">

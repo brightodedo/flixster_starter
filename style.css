@@ -70,7 +70,7 @@ button:hover{
     font-size: 120px;
 }
 
-#movie-area{
+#movies-grid{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -88,12 +88,11 @@ button:hover{
     -moz-text-fill-color: transparent;
 }
 
-#load-more{   
+#load-more-movies-btn{   
     margin: 15px;
 }
-#previous{
+#close-search-btn{
     display: none;
-    margin: 0px 0px 15px 0px;
 }
 .centered{
     display: flex;
