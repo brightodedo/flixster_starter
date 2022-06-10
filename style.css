@@ -1,1 +1,67 @@
+.title-container{
+    display: flex;
+    flex-flow: wrap
+}
 
+#title-heading{
+    color: brown;
+}
+
+
+
+.image-format{
+    background-color: black;
+    color: gray;
+    width: 255px;
+    text-align: center;
+    margin: 12px;
+}
+
+.image-format:hover{
+    outline: none;
+    box-shadow: 0 0 18px lavenderblush;
+    border-radius: 50px;
+    transform: scale(0.9);
+}
+
+.image-format img{
+    width: 90%;
+    border-radius: 50px;
+}
+
+.image-format span{
+}
+
+.image-format p{
+    font-size: 120px;
+    color: brown;
+}
+
+#movie-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#page-heading{
+    text-align: center;
+    font-size: 55px;
+    background-image: linear-gradient(45deg,red, blue);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+body{
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#load-more{   
+}
+#previous{
+    display: none;
+}
