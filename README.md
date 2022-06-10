@@ -42,22 +42,24 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 
 
-`ADD_EMBEDDED_CODE_HERE`
 ![gify](https://user-images.githubusercontent.com/54002497/173162202-ee3af937-3820-48af-a106-aee34209c8d5.gif)
 
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+yes the topics discussed prepared me.
+I felt prepared to complete all features in my weekly assignment except for the 
+pop up feature which took me a while to figure out.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time, I would have planned my functions and interoperability better.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+my response to results not found didn't go as planned, the page window resizes for
+reasons yet explained. I'd like to try the search icon feature
 
 ### Open-source libraries used
 
@@ -66,3 +68,5 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+Shout out to Mentor Connie Nguyen
