@@ -43,7 +43,7 @@ button:hover{
     transform: scale(1.2);
 }
 
-.image-format{
+.movie-card{
     background-color: black;
     color: gray;
     width: 255px;
@@ -51,22 +51,22 @@ button:hover{
     margin: 12px;
 }
 
-.image-format:hover{
+.movie-card:hover{
     outline: none;
     box-shadow: 0 0 18px lavenderblush;
     border-radius: 50px;
     transform: scale(0.84);
 }
 
-.image-format img{
+.movie-card img{
     width: 90%;
     border-radius: 50px;
 }
 
-.image-format span{
+.movie-card span{
 }
 
-.image-format p{
+.movie-card p{
     font-size: 120px;
 }
 

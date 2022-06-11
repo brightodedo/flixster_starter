@@ -30,7 +30,7 @@ function displayContent(movieObj){
     loadMore.style.display = 'initial';
     if(movieObj['poster_path']){
     movieArea.innerHTML += `
-    <div class="image-format" id="${movieObj['id']}">
+    <div class="movie-card" id="${movieObj['id']}">
     <img src="https://image.tmdb.org/t/p/w500${movieObj['poster_path']}" 
     alt="Movie poster for ${movieObj['title']}" class="movie-poster">
             <span class="movie-title"> ${movieObj['title']} </span>
@@ -39,7 +39,7 @@ function displayContent(movieObj){
     }
     else{
         movieArea.innerHTML += `
-    <div class="image-format" id="${movieObj['id']}">
+    <div class="movie-card" id="${movieObj['id']}">
     <img src="notfound.png" 
     alt="Movie poster for ${movieObj['title']}" class="movie-poster">
             <span class="movie-title"> ${movieObj['title']} </span>
